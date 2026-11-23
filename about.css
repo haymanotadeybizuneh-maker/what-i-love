@@ -1,0 +1,226 @@
+/* =================================
+   1. FONTS
+================================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/*2. GENERAL*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #d1ba73;
+    color: #1e4d31;
+    line-height: 1.7;
+}
+
+a:focus-visible {
+    outline: 3px solid #173a2b;
+    outline-offset: 3px;
+}
+
+
+/* =================================
+   3. PAGE TITLE
+   Gradient background + two text colors
+================================= */
+.welcome-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5vw, 52px);
+    text-align: center;
+    color: #e4c36b;
+
+    padding: 70px;
+    margin: 30px auto;
+    width: 90%;
+
+    background: linear-gradient(to right, #173a2b, #64957a);
+    border-radius: 18px;
+}
+
+
+/* =================================
+   4. HERITAGE GRID (CSS Grid)
+================================= */
+.heritage-list {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+
+    display: grid;
+    gap: 25px;
+}
+
+
+/* =================================
+   5. HERITAGE CARDS
+   Box model: padding, margin, border, box-sizing
+================================= */
+.heritage {
+    display: flex;
+    flex-direction: column;
+
+    padding: 24px;
+    border: 2px solid #aa9249;
+    border-left: 6px solid #173f2d;
+    border-radius: 10px;
+
+    background-color: rgba(144, 92, 92, 0.3);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Pseudo-class: hover */
+.heritage:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(23, 58, 43, 0.25);
+}
+
+/* Pseudo-class: nth-child (every even card gets a gold edge) */
+.heritage:nth-child(even) {
+    border-left-color: #8a6d1f;
+}
+
+.heritage h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    line-height: 1.3;
+    color: #174b35;
+    margin-bottom: 12px;
+}
+
+.heritage h2 i {
+    color: #8a6d1f;
+    margin-right: 6px;
+}
+
+/* p grows so every link sits at the bottom of its card */
+.heritage p {
+    flex-grow: 1;
+    font-size: 14px;
+    color: #3f4a3f;
+    margin-bottom: 18px;
+}
+
+
+/* =================================
+   6. LINKS
+================================= */
+.text-link,
+.lal-pic {
+    align-self: flex-start;
+
+    color: #174b35;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+
+    border-bottom: 2px solid #174b35;
+    padding-bottom: 3px;
+
+    transition: 0.3s ease;
+}
+
+/* Pseudo-element: arrow after the link */
+.text-link::after,
+.lal-pic::after {
+    content: ' →';
+}
+
+.text-link:hover,
+.lal-pic:hover {
+    color: #8a6d1f;
+    border-color: #8a6d1f;
+}
+
+.text-link:visited,
+.lal-pic:visited {
+    color: #174b35;
+}
+
+
+/* =================================
+   7. FOOTER
+================================= */
+footer {
+    background-color: #444a48;
+    color: #eeedea;
+    text-align: center;
+    padding: 40px;
+    font-size: 15px;
+}
+
+footer h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #e4c36b;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 20px 0;
+}
+
+.footer-links a {
+    color: #eeedea;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #e4c36b;
+}
+
+.copyright {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #b9bbb6;
+}
+
+
+/* =================================
+   8. RESPONSIVE: TABLET
+================================= */
+@media (max-width: 1024px) {
+
+    .heritage-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =================================
+   9. RESPONSIVE: MOBILE
+================================= */
+@media (max-width: 600px) {
+
+    .welcome-text {
+        padding: 45px 15px;
+    }
+
+    .heritage-list {
+        grid-template-columns: 1fr;
+    }
+
+    .heritage h2 {
+        font-size: 20px;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+}

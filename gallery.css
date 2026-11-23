@@ -1,0 +1,340 @@
+/* =================================
+   1. FONTS
+================================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/*2. GENERAL*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #1e4d31;
+    line-height: 1.7;
+
+    /* Background picture (gold shows if the image is missing) */
+    background-color: #757571;
+    background-image:
+        linear-gradient(rgba(74, 73, 70, 0.8), rgba(209, 186, 115, 0.80)),
+        url("./image/pic\ 2\ monk.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+a:focus-visible {
+    outline: 3px solid #173a2b;
+    outline-offset: 3px;
+}
+
+
+/*3. HEADER (sticky) AND NAV*/
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px;
+    background: linear-gradient(to right, #173a2b, #1e5b3a);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    color: #e4c36b;
+}
+
+.logo span {
+    font-size: 18px;
+    margin-left: 6px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #e4c36b;
+}
+
+
+/* 
+   4. PAGE TITLE
+*/
+.intro {
+    text-align: center;
+    margin: 50px auto 30px;
+    padding: 0 20px;
+}
+
+.welcome-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5vw, 52px);
+    letter-spacing: 6px;
+    color: #042f1d;
+}
+
+.intro p {
+    color: #1b3e1b;
+}
+
+
+/* =================================
+   5. GALLERY GRID (CSS Grid)
+================================= */
+.gallery {
+    width: 94%;
+    max-width: 1200px;
+    margin: 30px auto 50px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+
+/*6. PICTURE CARDS*/
+figure {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    border: 2px solid #b79b4a;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.45);
+
+    /* Keeps the card clear of the sticky header after a jump */
+    scroll-margin-top: 100px;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* Animation: each card fades in and rises */
+    animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pseudo-class: hover */
+figure:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(23, 58, 43, 0.25);
+}
+
+/* Pseudo-class: target (the card opened from the About page) */
+figure:target {
+    outline: 4px solid #c6a34a;
+    box-shadow: 0 10px 25px rgba(23, 58, 43, 0.4);
+}
+
+/* Pseudo-class: nth-child (every even card gets a gold edge) */
+figure:nth-child(even) {
+    border-color: #8a6d1f;
+}
+
+
+/* =================================
+   7. IMAGES (fixed size, zoom on hover)
+================================= */
+figure img {
+    display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+figure:hover img {
+    transform: scale(1.05);
+}
+
+/* Hides the zoomed image edges inside the card */
+figure {
+    overflow: hidden;
+}
+
+
+/* =================================
+   8. CAPTIONS
+================================= */
+figcaption {
+    padding: 20px;
+}
+
+figcaption h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    color: #174b35;
+    margin-bottom: 8px;
+}
+
+figcaption h2 i {
+    color: #8a6d1f;
+    margin-right: 6px;
+}
+
+figcaption p {
+    font-size: 14px;
+    color: #3f4a3f;
+}
+
+
+/* =================================
+   9. LEARN MORE SECTION
+================================= */
+.more {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    padding: 30px;
+    text-align: center;
+
+    border: 2px solid #b79b4a;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.45);
+}
+
+.more h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #174b35;
+    margin-bottom: 10px;
+}
+
+.more p {
+    margin-bottom: 12px;
+}
+
+/* Link states */
+.more a:link {
+    color: #174b35;
+    font-weight: 600;
+}
+
+.more a:visited {
+    color: #6b5a1d;
+}
+
+.more a:hover {
+    color: #8a6d1f;
+}
+
+.more a:active {
+    color: #0f3d25;
+}
+
+
+/* =================================
+   10. FOOTER
+================================= */
+footer {
+    padding: 40px 20px 25px;
+
+    background-color: #444a48;
+    color: #eeedea;
+    text-align: center;
+    font-size: 13px;
+}
+
+footer h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #e4c36b;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 20px 0;
+}
+
+.footer-links a {
+    color: #eeedea;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #e4c36b;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #b9bbb6;
+}
+
+
+/* =================================
+   11. RESPONSIVE: TABLET
+================================= */
+@media (max-width: 1024px) {
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =================================
+   12. RESPONSIVE: MOBILE
+================================= */
+@media (max-width: 600px) {
+
+    .header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    figure img {
+        height: 200px;
+    }
+
+    .more {
+        margin: 0 20px 40px;
+        padding: 20px;
+    }
+}

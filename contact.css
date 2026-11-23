@@ -1,0 +1,389 @@
+/* =================================
+   1. FONTS
+================================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/* =================================
+   2. GENERAL
+================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #1e4d31;
+    line-height: 1.7;
+
+    /* Background picture (gold color shows if the image is missing) */
+    background-image: 
+        url("./image/lights.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+a:focus-visible {
+    outline: 3px solid #173a2b;
+    outline-offset: 3px;
+}
+
+
+/* =================================
+   3. HEADER (sticky) AND NAV
+================================= */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 6%;
+    background: linear-gradient(to right, #173a2b, #1e5b3a);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    color: #e4c36b;
+}
+
+.logo span {
+    font-size: 18px;
+    margin-left: 6px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: rgb(238, 224, 224);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #e4c36b;
+}
+
+
+/* =================================
+   4. PAGE LAYOUT
+================================= */
+.contact-page {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.welcome-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 46px);
+    color: #c89b27;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    color: #e7ebe7;
+}
+
+
+/* =================================
+   5. HOW TO REGISTER
+================================= */
+.how-to {
+    padding: 24px;
+    margin-bottom: 30px;
+
+    border: 2px solid #b79b4a;
+    border-left: 6px solid #174b35;
+    border-radius: 12px;
+    background-color: rgba(80, 71, 71, 0.35);
+}
+
+.how-to h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #c5d1cc;
+    margin-bottom: 10px;
+}
+
+.how-to ol {
+    padding-left: 22px;
+}
+
+.how-to li {
+    color: #c5d1cc;
+    margin-bottom: 6px;
+    font-size: 15px;
+}
+
+
+/* =================================
+   6. FORM CARD
+================================= */
+.register-form {
+    padding: 30px;
+
+    border: 2px solid #b79b4a;
+    border-radius: 12px;
+    background-color: rgba(80, 71, 71, 0.35);
+}
+
+.field {
+    margin-bottom: 20px;
+
+}
+
+label {
+    font-weight: 500;
+    color: #deeae5;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+
+/* =================================
+   7. INPUTS
+================================= */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #0b4622;
+
+    border: 2px solid #b79b4a;
+    border-radius: 8px;
+    background-color: #fffdf5;
+
+    transition: 0.3s ease;
+}
+
+/* Pseudo-classes: hover and focus */
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="number"]:hover,
+textarea:hover {
+    border-color: #8a6d1f;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #174b35;
+    box-shadow: 0 0 0 3px rgba(23, 75, 53, 0.25);
+}
+
+/* Required fields get a green edge when filled correctly */
+input:required:valid {
+    border-left: 5px solid #174b35;
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+/* =================================
+   8. RADIO AND CHECKBOXES
+================================= */
+fieldset {
+    margin-bottom: 20px;
+    padding: 18px 20px;
+
+    border: 2px solid #b79b4a;
+    border-radius: 10px;
+}
+
+legend {
+    padding: 0 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #b6c4be;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: #174b35;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+fieldset label {
+    margin-right: 18px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+fieldset label:hover {
+    color: #8a6d1f;
+}
+
+/* Heritages in two columns, A to Z down each column */
+.heritage-options {
+    column-count: 2;
+    column-gap: 30px;
+}
+
+.option {
+    break-inside: avoid;
+    margin-bottom: 10px;
+}
+
+/* "Other" text box sits under its checkbox */
+#other-place {
+    display: block;
+    margin-top: 8px;
+}
+
+
+/* =================================
+   9. SUBMIT BUTTON
+================================= */
+button {
+    display: inline-block;
+    padding: 14px 32px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #173a2b;
+
+    background-color: #c6a34a;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+/* Pseudo-element: arrow after the button text */
+button::after {
+    content: ' →';
+}
+
+button:hover {
+    background-color: #e4c36b;
+    transform: translateY(-4px);
+}
+
+
+/* =================================
+   10. FOOTER
+================================= */
+footer {
+    margin-top: 50px;
+    padding: 40px 20px 25px;
+
+    background-color: #444a48;
+    color: #eeedea;
+    text-align: center;
+    font-size: 13px;
+}
+
+footer h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #e4c36b;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 20px 0;
+}
+
+.footer-links a {
+    color: #eeedea;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #e4c36b;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #b9bbb6;
+}
+
+
+/* =================================
+   11. RESPONSIVE: TABLET
+================================= */
+@media (max-width: 1024px) {
+
+    .contact-page {
+        max-width: 700px;
+    }
+}
+
+
+/* =================================
+   12. RESPONSIVE: MOBILE
+================================= */
+@media (max-width: 600px) {
+
+    .header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .register-form {
+        padding: 20px;
+    }
+
+    /* Two columns become one */
+    .heritage-options {
+        column-count: 1;
+    }
+
+    button {
+        width: 100%;
+    }
+}

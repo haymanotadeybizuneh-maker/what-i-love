@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Ethiopian Orthodox Churches | Sacred Heritage</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">ETHIOPIA <span>✦</span></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="contact-page">
+
+        <section class="intro">
+            <h1 class="welcome-text">REGISTER TO VISIT</h1>
+            <p>Fill in the form, choose the places you want to see, and tell us what you need.</p>
+        </section>
+
+        <!-- How to register -->
+        <section class="how-to">
+            <h2> How to register</h2>
+            <ol>
+                <li>Enter your name, email and number of visitors</li>
+                <li>Choose your visit type</li>
+                <li>Select the heritages you want to visit</li>
+                <li>Add any other place you want to visit, then send your message</li>
+            </ol>
+        </section>
+
+        <form class="register-form" action="#" method="post">
+
+            <div class="field">
+                <label for="fullname">Full name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Your name" required>
+            </div>
+
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="field">
+                <label for="visitors">Number of visitors</label>
+                <input type="number" id="visitors" name="visitors" min="1" max="50" value="1" required>
+            </div>
+
+            <fieldset>
+                <legend>Visit type</legend>
+                <input type="radio" id="solo" name="visit-type" value="solo" required>
+                <label for="solo">Solo</label>
+                <input type="radio" id="family" name="visit-type" value="family">
+                <label for="family">Family</label>
+                <input type="radio" id="group" name="visit-type" value="group">
+                <label for="group">Group</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Choose your heritages</legend>
+                <div class="heritage-options">
+                    <div class="option">
+                        <input type="checkbox" id="yemata-guh" name="heritage" value="yemata-guh">
+                        <label for="yemata-guh">Abuna Yemata Guh</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="axum" name="heritage" value="axum">
+                        <label for="axum">Axum</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="debre-berhan" name="heritage" value="debre-berhan">
+                        <label for="debre-berhan">Debre Berhan Selassie</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="debre-damo" name="heritage" value="debre-damo">
+                        <label for="debre-damo">Debre Damo</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="debre-libanos" name="heritage" value="debre-libanos">
+                        <label for="debre-libanos">Debre Libanos</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="entoto-maryam" name="heritage" value="entoto-maryam">
+                        <label for="entoto-maryam">Entoto Maryam</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="gishen-mariam" name="heritage" value="gishen-mariam">
+                        <label for="gishen-mariam">Gishen Mariam</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="lake-tana" name="heritage" value="lake-tana">
+                        <label for="lake-tana">Lake Tana</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="lalibela" name="heritage" value="lalibela">
+                        <label for="lalibela">Lalibela</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="yeha" name="heritage" value="yeha">
+                        <label for="yeha">Yeha</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="other" name="heritage" value="other">
+                        <label for="other">Other</label>
+                        <input type="text" id="other-place" name="other-place" placeholder="Type the place you want to visit">
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Questions or special requests"></textarea>
+            </div>
+
+            <button type="submit">Register</button>
+
+        </form>
+
+    </main>
+
+    <footer>
+        <h2>ETHIOPIAN ORTHODOX CHURCHES</h2>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p class="copyright">&copy; 2026 Ethiopian Orthodox Churches. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
